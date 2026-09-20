@@ -1,17 +1,18 @@
---! 40 lines 24 code 9 comments 7 blanks
+--! 41 lines 26 code 8 comments 7 blanks
 --! ```lua
 --! print('Hello, world!')
 --! -- A comment
 --! --[[ Another comment ]]
 --! ```
 
---[[ This is ONE block comment: --[[
-]]
-
 print('Hello, world!') --[[ --[[ a nested comment ]] --]]
 print("Hello, again, world!")
-print([[This is a
-multiline string.]])
+print("Teal is a shade of blue -- a colour.")
+print([["This is a multiline string." ~ Coders Daily, 2026
+-- This isn't a comment!
+]]) -- BUG: ^ the above is counted as a comment if the ]] is on the same line as it
+
+--[[ This is ONE block comment: --[[ ]]
 
 local type FindIt = function(haystack: string, needle: string): boolean
 local find_it: FindIt = function(x: string, y: string): boolean
